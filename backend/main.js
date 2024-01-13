@@ -6,9 +6,10 @@ const app = express();
 const PATH = path.resolve(__dirname)
 
 app.use(express.static(path.resolve(__dirname, '../frontend')));
+app.use(express.static(path.resolve(__dirname, '../frontend/build')));
 
 app.get('/', (req, res) =>{
-    res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
+    res.sendFile(path.resolve(__dirname, '../frontend/build', "index.html"));
 })
 
 
