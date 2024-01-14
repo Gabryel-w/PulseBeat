@@ -10,11 +10,11 @@ function Header() {
         <div className="logo">
           <img src={logo} alt="Logo" />
         </div>
-        <h1 className='title'>Pulse Beat</h1>
+       
       </div>
 
-      <div className="search-bar">
-        <input type="text" className="search-input" placeholder="Pesquisar..." />
+      <div className="title-center ">
+        <h1 className='title-text'>Pulse Beat</h1>
       </div>
 
       <div className="nav-links">

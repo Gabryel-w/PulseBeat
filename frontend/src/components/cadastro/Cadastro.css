@@ -1,6 +1,8 @@
 .container {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('./background.jpg');
+    background-size: cover; 
+    background-position: center; 
     margin: 0;
     display: flex;
     justify-content: center;
@@ -10,6 +12,16 @@
 
 .text {
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2em;
+    line-height: 40px;
+    padding-bottom: 30px;
+    color: #f74933;
+    background-clip: border-box;
+    background-image: linear-gradient( 109.6deg, rgb(241, 29, 29) 11.2%, rgb(248, 141, 41) 91.2% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 form {
@@ -18,15 +30,19 @@ form {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 500px;
+    height: 550px;
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
+    font-size: medium;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
 input {
     width: 100%;
+    height: 60px;
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
@@ -35,15 +51,26 @@ input {
 }
 
 button {
-    background-color: #4caf50;
+    display: inline-block;
+    background-clip: border-box;
+    background-image: linear-gradient( 109.6deg, rgb(241, 29, 29) 11.2%, rgb(248, 141, 41) 91.2% );
+    font-weight: bold;
     color: #fff;
-    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 4px;
+    width: 300px;
     cursor: pointer;
-    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    margin: 5% 20%
 }
 
+ 
+
 button:hover {
-    background-color: #45a049;
+    background-clip: border-box;
+    background-image: linear-gradient( 109.6deg, rgb(248, 141, 41) 11.2%, rgb(241, 29, 29) 91.2% );
 }

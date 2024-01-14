@@ -6,7 +6,7 @@ function Cadastro() {
     <div className='container'>
        
         <form>
-            <h1 className='text'>Cadastre-se</h1>
+            <h1 className='text'>Crie Sua Conta</h1>
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required/>
     
@@ -16,7 +16,7 @@ function Cadastro() {
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" required/>
     
-            <button type="submit">Cadastrar</button>
+            <button type="submit">Enviar</button>
         </form>
     </div>
      </>
