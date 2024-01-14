@@ -10,9 +10,7 @@ header {
     top: 0;
     width: 100%;
     background-color: #000;
-    border-bottom: 2px solid rgb(233, 145, 13);
     color: white;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,9 +19,9 @@ header {
 
 .title-text {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 10%;
-    color: hsl(8, 88%, 39%);
+    color: #d92323;
 }
 
 .logo-title {
@@ -32,8 +30,8 @@ header {
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin-left: 10px;
 }
 
