@@ -25,7 +25,7 @@ function Cadastro() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('URL PARA LOGIN', loginData);
+            const response = await axios.post('/Login', loginData);
             console.log(response.data);
             // Retornar Home depois de logado
         } catch (error) {
@@ -44,7 +44,7 @@ function Cadastro() {
         e.preventDefault();
 
         try {
-            const response = await axios.post('URL PARA CADASTRO', formData);
+            const response = await axios.post('/Cadastro', formData);
             console.log(response.data);
             // Retornar Home depois de Cadastrado
         } catch (error) {
