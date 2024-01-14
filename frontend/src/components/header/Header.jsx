@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from './logo.png'
 import './Header.css';
 
 function Header() {
@@ -7,9 +8,9 @@ function Header() {
     <header>
       <div className="logo-title">
         <div className="logo">
-          <img src="caminho-para-sua-logo.png" alt="Logo" />
+          <img src={logo} alt="Logo" />
         </div>
-        <h1>Pulse Beat</h1>
+        <h1 className='title'>Pulse Beat</h1>
       </div>
 
       <div className="search-bar">

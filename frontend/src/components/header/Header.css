@@ -13,6 +13,10 @@ header {
     align-items: center;
 }
 
+.title {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .logo-title {
     display: flex;
     align-items: center;
