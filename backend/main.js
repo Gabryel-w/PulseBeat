@@ -33,16 +33,50 @@ app.get('*', (req, res) =>{
     res.sendFile(path.resolve(__dirname, '../frontend/build', "index.html"));
 })
 app.post('/Cadastro', (req, res) =>{
-    console.log(req.body.name);
-    console.log(req.body.email)
+    var name = req.body.nome;
+    var email = req.body.email;
+    var password = req.body.senha;
 
-    res.send("Done!")
+    var getUser = `SELECT * from user WHERE name = '${name}'`
+    conn.query(getUser, (err, result) =>{
+        if (err) throw err;
+        if (result.length > 0){
+            return res.status(403).json({response:0});
+        } else {
+            var insertSql = `INSERT INTO user (name, email, password) VALUES ('${name}', '${email}', '${password}')`
+            conn.query(insertSql, (err, result)=> {
+                if (err){
+                    throw err;
+                }
+                console.log("inserted values into user");
+                return res.status(200).json({response:1});
+            });
+        }
+    })
 })
-app.post('/Login', (req, res) =>{
-    console.log(req.body.name);
-    console.log(req.body.email)
 
-    res.send("Done!")
+app.post('/Login', (req, res) =>{
+    var name = req.body.loginNome
+    var password = req.body.loginSenha
+
+    var sql = `SELECT * FROM user WHERE name = '${name}'`
+    
+    
+    conn.query(sql, (err, result) =>{
+        if (err) throw err;
+
+        if (result.length >0){
+            if (password == result[0].password){
+                console.log("allowed");
+                console.log("user", result[0].id, "connected");
+                return res.status(200).json({response:'allowed'});
+            }
+        }
+
+        console.log("forbidden");
+        return res.status(403).json({response:'forbidden'});
+
+    })
 })
 
 
@@ -51,6 +85,3 @@ app.listen(PORT, () => {
     console.log(`server on http://localhost:${PORT}`);
 })
 
-
-// End DB connection
-conn.end()
