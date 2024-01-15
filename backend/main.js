@@ -1,4 +1,5 @@
 // Librarys
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const mysql = require("mysql");
@@ -12,9 +13,9 @@ const PATH = path.resolve(__dirname)
 
 const conn = mysql.createConnection({ 
     host:"localhost",
-    user:"root",
-    password:"Jm11072!",
-    database:"users"
+    user: process.env.DBUser,
+    password: process.env.DBPassword,
+    database: process.env.DBName
 })
 
 // Start DB connection
@@ -37,7 +38,7 @@ app.post('/Cadastro', (req, res) =>{
     var email = req.body.email;
     var password = req.body.senha;
 
-    var getUser = `SELECT * from user WHERE name = '${name}'`
+    var getUser = `SELECT * from user WHERE email = '${email}'`
     conn.query(getUser, (err, result) =>{
         if (err) throw err;
         if (result.length > 0){
@@ -56,10 +57,10 @@ app.post('/Cadastro', (req, res) =>{
 })
 
 app.post('/Login', (req, res) =>{
-    var name = req.body.loginNome
+    var email = req.body.loginNome
     var password = req.body.loginSenha
 
-    var sql = `SELECT * FROM user WHERE name = '${name}'`
+    var sql = `SELECT * FROM user WHERE email = '${email}'`
     
     
     conn.query(sql, (err, result) =>{
