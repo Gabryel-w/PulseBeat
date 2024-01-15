@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Cadastro.css';
+import './Login.css';
 
-function Cadastro() {
+function Login() {
     const [loginData, setLoginData] = useState({
-        loginNome: '',
+        loginEmail: '',
         loginSenha: '',
     });
 
@@ -66,8 +66,8 @@ function Cadastro() {
                                 <div className="form">
                                     <div className="form-row">
                                         <i className="fas fa-user"></i>
-                                        <label className="form-label" htmlFor="loginNome">Nome</label>
-                                        <input type="text" className="form-text" placeholder="Insira Seu Nome" name="loginNome" value={loginData.loginNome} onChange={handleLoginChange} />
+                                        <label className="form-label" htmlFor="loginEmail">E-Mail</label>
+                                        <input type="text" className="form-text" placeholder="Insira Seu E-mail" name="loginEmail" value={loginData.loginEmail} onChange={handleLoginChange} />
                                     </div>
                                     <div className="form-row">
                                         <i className="fas fa-eye"></i>
@@ -116,4 +116,4 @@ function Cadastro() {
     );
 }
 
-export default Cadastro;
+export default Login;
