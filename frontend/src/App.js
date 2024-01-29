@@ -5,7 +5,6 @@ import Home from './components/home/Home';
 import Login from './components/cadastro/Login';
 
 
-
 function App() {
   return (
     <Router>
